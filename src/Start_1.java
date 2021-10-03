@@ -444,13 +444,29 @@ public class Start_1 {
         
         
         System.out.println("----------");
-        
-        //1.5.5
-        
-        Fraction f1 = new Fraction(1,5);
-        System.out.println(f1);
+
+
         //практика 2.10.2021
-        
-        House houseTest = new House(-1);
+
+        //House houseTest = new House(-1);
+
+        //1.5.5
+        Fraction f1 = new Fraction(1,3);
+        Fraction f2 = new Fraction(2,3);
+        Fraction f3 = new Fraction(2,9);
+
+        System.out.println(f1 + " + " + f2 +" = "+ f1.addition(f2)); // сложение
+        System.out.println(f1 + " - " + f2 +" = "+ f1.subtraction(f2)); // вычитание
+        System.out.println(f1 + " * " + f2 +" = "+ f1.multiplication(f2)); // умножение
+        System.out.println(f1 + " / " + f2 +" = "+ f1.division(f2)); // деление
+
+        //1.5.5.4
+        System.out.println(f1.subtraction(f2).division(f3).subtraction(5));
+
+
+
+
+
+
     }
 }
