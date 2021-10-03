@@ -1,9 +1,15 @@
 
 public class House {
-    final int numberOfFloors;
+    final private int numberOfFloors;
 
     public House(int numberOfFloors){
-        this.numberOfFloors = numberOfFloors;
+        if (numberOfFloors < 0)
+            throw new IllegalArgumentException();
+       this.numberOfFloors = numberOfFloors; 
+    }
+    
+    public int getNumberOfFloors(){
+        return numberOfFloors;
     }
     public String toString() {
         String temp = "этажами";

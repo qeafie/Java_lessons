@@ -399,24 +399,28 @@ public class Start_1 {
         System.out.println("----------");
         
         // 1.5.3
+
+        Line line = new Line(new Point(1,1),new Point(10,15));
+        System.out.println(line.getDistance());
+        System.out.println("----------");
         
         //Практика цыгане
-        int i = 10;
-        City tempCity = cityA;
-        Path[] checkedPath= new Path[10]; 
-        while(i>0){
+//        int i = 10;
+//        City tempCity = cityA;
+//        Path[] checkedPath= new Path[10];
+//        while(i>0){
         
-        for(int i = 0; i < checkedPath.length; i++){
-            if(checkedPath[i]!=null){
-                if(tempCity != chekedPath[i]){
-                tempCity = tempCity.paths[i].city;
-                System.out.println(tempCity.name);
-                checkedPath[i+1] =tempCity ;
-                }
-            }
-           
-            
-        }   
+//        for(int i = 0; i < checkedPath.length; i++){
+//            if(checkedPath[i]!=null){
+//                if(tempCity != chekedPath[i]){
+//                tempCity = tempCity.paths[i].city;
+//                System.out.println(tempCity.name);
+//                checkedPath[i+1] =tempCity ;
+//                }
+//            }
+//
+//
+//        }
             
 //        if(tempCity != tempCity.paths[0].city){
 //            
@@ -425,8 +429,28 @@ public class Start_1 {
 //        }
         
         
-        i--;
-        }
+        //i--;
+        
+        
+        //1.5.4 
+        Time t4 = new Time(34056);
+        System.out.println(t4.getHour());
+        
+        Time t5 = new Time(4532);
+        System.out.println(t5.getMinutes());
+        
+        Time t6  = new Time(123);
+        System.out.println(t6.getSeconds());
+        
+        
+        System.out.println("----------");
+        
+        //1.5.5
+        
+        Fraction f1 = new Fraction(1,5);
+        System.out.println(f1);
+        //практика 2.10.2021
+        
+        House houseTest = new House(-1);
     }
-
 }
