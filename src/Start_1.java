@@ -462,11 +462,14 @@ public class Start_1 {
 
         //1.5.5.4
         System.out.println(f1.subtraction(f2).division(f3).subtraction(5));
+        System.out.println("----------");
 
 
+        //
 
+        //1.5.8 Квадрат
 
-
-
+        Square square = new Square(5,3,23);
+        System.out.println(square);
     }
 }
