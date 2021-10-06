@@ -1,10 +1,12 @@
 
 public class Fraction {
     
-    int numerator;
-    int denominator;
+    private final int numerator;
+    private final int denominator;
     
     public Fraction(int numerator, int denominator){
+        if (denominator<=0)
+            throw new IllegalArgumentException("Знаменатель не может быть <=0");
         this.numerator = numerator;
         this.denominator = denominator;
     }
@@ -49,6 +51,15 @@ public class Fraction {
     public Fraction division(Fraction secondFraction){
         return new Fraction(numerator * secondFraction.denominator,denominator * secondFraction.numerator);
     }
+
+    public int getNumerator() {
+        return numerator;
+    }
+
+    public int getDenominator() {
+        return denominator;
+    }
+
     @Override
     public String toString(){
         return numerator + "/" + denominator; 

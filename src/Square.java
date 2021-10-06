@@ -1,8 +1,11 @@
 public class Square {
     Point point;
-    int sideLength;
+    private int sideLength;
 
     public Square (Point point, int sideLength){
+        if (sideLength<=0){
+            throw new IllegalArgumentException("Длина должна быть больше 0");
+        }
         this.point = point;
         this.sideLength = sideLength;
     }
@@ -17,6 +20,17 @@ public class Square {
                 new Point(point.x, point.y - sideLength) //левый нижний
                 );
     }
+
+    public void setSideLength(int sideLength){
+        if (sideLength<=0){
+            throw new IllegalArgumentException("Длина должна быть больше 0");
+        }
+        this.sideLength = sideLength;
+    }
+    public int getSideLength() {
+        return sideLength;
+    }
+
     @Override
     public String toString() {
         return "Квадрат в точке " + point + " со стороной " + sideLength;

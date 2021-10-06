@@ -1,8 +1,8 @@
 
 public class Time {
-   int seconds;
-   int hour;
-   int minutes;
+   private int seconds;
+   private int hour;
+   private int minutes;
    
    
    public Time(int seconds){

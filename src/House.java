@@ -11,6 +11,7 @@ public class House {
     public int getNumberOfFloors(){
         return numberOfFloors;
     }
+
     public String toString() {
         String temp = "этажами";
         

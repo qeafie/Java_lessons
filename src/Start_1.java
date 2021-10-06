@@ -492,7 +492,23 @@ public class Start_1 {
         p2.polyline.get(p2.polyline.size() - 1).x = 15;
         p2.polyline.get(p2.polyline.size() - 1).y = 25;
         System.out.println("Длина ломаной линии: "+ p2.getDistance());
+        System.out.println("----------");
 
 
+        //1.6.1 Дом над землей
+        //House houseTest = new House(5);   //Exception in thread "main" java.lang.IllegalArgumentException
+        //houseTest.numberOfFloors = 0;                  //numberOfFloors has private access in House
+
+
+        //1.6.2 Время
+
+        //1.6.3 Сторона Квадрата
+
+//        Square square1 = new Square(new Point(1,1),-12); //Exception in thread "main" java.lang.IllegalArgumentException: Длина должна быть больше 0
+//        square1.setSideLength(-12); //Exception in thread "main" java.lang.IllegalArgumentException: Длина должна быть больше 0
+//        System.out.println(square1.getSideLength());
+//        System.out.println("----------");
+
+        //1.6.4 Дроби
     }
 }
