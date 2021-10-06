@@ -10,13 +10,17 @@ public class Gun {
         this.countOfAmmo = countOfAmmo;
     }
     
-    public void shoot(){
-        
-        while(countOfAmmo > 0){
-            System.out.println("Бах!");
-            countOfAmmo--;
+    public void shoot(int shoot){
+        while (shoot > 0){
+            if(countOfAmmo > 0){
+                System.out.println("Бах!");
+                countOfAmmo--;
+            }else {
+                System.out.println("Клац");
+            }
+            shoot--;
         }
-        System.out.println("Клац");
+
         
     }
 }

@@ -389,7 +389,7 @@ public class Start_1 {
         // 1.5.1 Пистолет
         
         Gun g1 = new Gun(3);
-        g1.shoot();
+        g1.shoot(5);
         System.out.println("----------");
         
         // 1.5.2 Кот 
@@ -486,5 +486,13 @@ public class Start_1 {
         //1.5.8 Квадрат
         Square square = new Square(5,3,23);
         System.out.println(square);
+        Polyline p2 = square.getPolyline();
+        System.out.println("Длина ломаной линии: "+ p2.getDistance());
+        
+        p2.polyline.get(p2.polyline.size() - 1).x = 15;
+        p2.polyline.get(p2.polyline.size() - 1).y = 25;
+        System.out.println("Длина ломаной линии: "+ p2.getDistance());
+
+
     }
 }
