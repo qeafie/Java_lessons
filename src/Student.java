@@ -24,25 +24,26 @@ public class Student {
             return sum/grades.length;
         }
     }
+//    public boolean isExcellentStudent(){
+//        if (grades.length != 0){
+//            for (int grade : grades){
+//                if( grade == 1 ||
+//                    grade == 2 ||
+//                    grade == 3 ) return false;
+//            }
+//            return true;
+//        }
+//        return false;
+//    }
+
     public boolean isExcellentStudent(){
-        if (grades.length != 0){
-            for (int grade : grades){
-                if( grade == 1 ||
-                    grade == 2 ||
-                    grade == 3 ) return false;
-            }
-            return true;
+        if (grades.length != 0) {
+            if (this.getAverageRating()==5.0)
+                return true;
         }
         return false;
     }
 
-//    public boolean isExcellentStudent(){
-//        if (grades.length != 0) {
-//            if (this.getAverageRating()==5.0)
-//                return true;
-//        }
-//        return false;
-//    }
     @Override
     public String toString(){
         String tempGrades = "";

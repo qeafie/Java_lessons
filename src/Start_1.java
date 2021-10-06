@@ -250,7 +250,7 @@ public class Start_1 {
 
         Polyline poly = new Polyline(new Point(2,4),new Point(2,8), new Point (10,15));
         System.out.println(poly);
-        System.out.println(poly.getLine());
+
 
         // 1.3.1.1 Студент
         Student s1 = new Student(new Name("Вася"),3,4,5);
@@ -465,10 +465,25 @@ public class Start_1 {
         System.out.println("----------");
 
 
-        //
+        //1.5.6 Студент отличник
+
+        Student vasya = new Student(new Name("Вася"),3,4,5,4);
+        Student petya = new Student(new Name("Петя"),5,5,5,5);
+
+        System.out.println(vasya.name + "Средний балл: " + vasya.getAverageRating() + ", Отличник? - " + vasya.isExcellentStudent());
+        System.out.println(petya.name + "Средний балл: " + petya.getAverageRating() + ", Отличник? - " + petya.isExcellentStudent());
+        System.out.println("----------");
+
+
+        //1.5.7 Кривая линия
+
+        Polyline p1 = new Polyline(new Point(1,5),new Point(2,8), new Point(5,3));
+        System.out.println("Длина ломаной линии: "+p1.getDistance());
+        p1.addPoint(new Point(5,15),new Point(8,10));
+        System.out.println("Длина ломаной линии: "+p1.getDistance());
+        System.out.println("----------");
 
         //1.5.8 Квадрат
-
         Square square = new Square(5,3,23);
         System.out.println(square);
     }

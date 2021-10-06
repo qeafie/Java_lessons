@@ -34,7 +34,6 @@ public class Fraction {
                     denominator * secondFraction.denominator);
     }
 
-
     public Fraction multiplication(int number){
         return new Fraction(numerator * number, denominator);
     }
