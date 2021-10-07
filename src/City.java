@@ -1,19 +1,29 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class City {
-    String name;
-    Path [] paths; // На этом месте мог быть ArrayList<Path>
-    int countPath;
+    private String name;
+    private List <Path> paths;
+
     City (String name){
         this.name = name;
-        paths = new Path[10];
-        countPath = 0;
+        paths = new ArrayList<Path>();
     }
 
     public void addPath(Path path){
-        paths[countPath++] = path;
+       if (paths.contains(path))
+           throw new IllegalArgumentException("Дорога уже существует");
+       paths.add(path);
     }
-    
+    public void deletePath(Path path){
+        if (! (paths.contains(path)))
+            throw new IllegalArgumentException("Элемент не существует");
+        paths.remove(path);
+    }
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString(){
         String tempStr = "";

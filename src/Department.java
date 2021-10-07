@@ -1,6 +1,6 @@
 public class Department{
-    String title;
-    Employee boss;
+    private String title;
+    private Employee boss;
     
     public Department(String title){
         this.title = title;
@@ -10,8 +10,25 @@ public class Department{
         this(title);
         this.boss = boss;
     }
-    
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Employee getBoss() {
+        return new Employee(boss.getName());
+    }
+
+    public void setBoss(Employee boss) {
+        if (this.boss == null)
+            this.boss = boss;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String toString (){
-        return "Отдел " + title + ". Начальник отдела: " + boss.name; 
+        return "Отдел " + title + ". Начальник отдела: " + boss.getName();
     }
 }

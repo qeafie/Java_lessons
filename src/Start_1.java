@@ -201,16 +201,16 @@ public class Start_1 {
 
 
         //1.2.4
-
-        Employee e1 = new Employee(new Name("Петров"),new Department("IT"));
-        Employee e2 = new Employee(new Name("Козлов"),e1.department);
-        Employee e3 = new Employee(new Name("Сидоров"),e1.department);
-        e1.department.boss = e2;
-
-        System.out.println (e1);
-        System.out.println (e2);
-        System.out.println (e3);
-        System.out.println("----------");
+//
+//        Employee e1 = new Employee(new Name("Петров"),new Department("IT"));
+//        Employee e2 = new Employee(new Name("Козлов"),e1.department);
+//        Employee e3 = new Employee(new Name("Сидоров"),e1.department);
+//        e1.department.boss = e2;
+//
+//        System.out.println (e1);
+//        System.out.println (e2);
+//        System.out.println (e3);
+//        System.out.println("----------");
 
         //1.2.5
 
@@ -252,34 +252,34 @@ public class Start_1 {
         System.out.println(poly);
 
 
-        // 1.3.1.1 Студент
-        Student s1 = new Student(new Name("Вася"),3,4,5);
-        System.out.println(s1);
+//        // 1.3.1.1 Студент
+//        Student s1 = new Student(new Name("Вася"),3,4,5);
+//        System.out.println(s1);
+//
+//        // 1.3.1.2
+//        Student s2 = new Student(new Name("Петя"),s1.grades);
+//        System.out.println(s2);
+//        System.out.println("----------");
+//
+//        // 1.3.1.2
+//        s2.grades[0] = 5;
+//        System.out.println(s1);
+//        System.out.println(s2);
+//        /*
+//        *   Поле grades у студента Пети ссылается на тот же массив(объект) grades у Васи.
+//        *   Следовательно если мы изменим оценку у Пети,то затроним общий массив.
+//        */
 
-        // 1.3.1.2
-        Student s2 = new Student(new Name("Петя"),s1.grades);
-        System.out.println(s2);
-        System.out.println("----------");
-
-        // 1.3.1.2
-        s2.grades[0] = 5;
-        System.out.println(s1);
-        System.out.println(s2);
-        /*
-        *   Поле grades у студента Пети ссылается на тот же массив(объект) grades у Васи.
-        *   Следовательно если мы изменим оценку у Пети,то затроним общий массив.
-        */
-
-        // 1.3.1.4
-        Student s3 = new Student(new Name("Андрей"),s1.grades.clone());
-        System.out.println(s3);
-        System.out.println("----------");
-
-        s1.grades[1] = 2;
-        System.out.println(s2);
-        System.out.println(s3);
-
-        System.out.println("----------");
+//        // 1.3.1.4
+//        Student s3 = new Student(new Name("Андрей"),s1.grades.clone());
+//        System.out.println(s3);
+//        System.out.println("----------");
+//
+//        s1.grades[1] = 2;
+//        System.out.println(s2);
+//        System.out.println(s3);
+//
+//        System.out.println("----------");
 
 
         // 1.3.2 Зачётка
@@ -467,12 +467,12 @@ public class Start_1 {
 
         //1.5.6 Студент отличник
 
-        Student vasya = new Student(new Name("Вася"),3,4,5,4);
-        Student petya = new Student(new Name("Петя"),5,5,5,5);
-
-        System.out.println(vasya.name + "Средний балл: " + vasya.getAverageRating() + ", Отличник? - " + vasya.isExcellentStudent());
-        System.out.println(petya.name + "Средний балл: " + petya.getAverageRating() + ", Отличник? - " + petya.isExcellentStudent());
-        System.out.println("----------");
+//        Student vasya = new Student(new Name("Вася"),3,4,5,4);
+//        Student petya = new Student(new Name("Петя"),5,5,5,5);
+//
+//        System.out.println(vasya.name + "Средний балл: " + vasya.getAverageRating() + ", Отличник? - " + vasya.isExcellentStudent());
+//        System.out.println(petya.name + "Средний балл: " + petya.getAverageRating() + ", Отличник? - " + petya.isExcellentStudent());
+//        System.out.println("----------");
 
 
         //1.5.7 Кривая линия
@@ -547,5 +547,7 @@ public class Start_1 {
 
 
         //1.6.9 Диапазон оценок
+
+        //1.6.10
     }
 }

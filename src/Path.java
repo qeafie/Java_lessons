@@ -10,6 +10,6 @@ public class Path {
         this.cost = cost;
     }
     public String toString(){
-        return city.name + ": " + cost;
+        return city.getName() + ": " + cost;
     }
 }

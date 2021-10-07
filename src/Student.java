@@ -1,7 +1,8 @@
+import java.util.Arrays;
 
 public class Student {
-    Name name;
-    int [] grades;
+    private Name name;
+    private int [] grades;
     
     public Student(Name name){
         this.name = name;      
@@ -9,6 +10,11 @@ public class Student {
     
     public Student(Name name,int...grades){
         this(name);
+        for (int grade:grades){
+            if((grade <= 2) && (grade >= 5)){
+                throw new IllegalArgumentException("Оценки должны быть в диапазоне от 2 до 5 включительно");
+            }
+        }
         this.grades = grades;      
     }
 
@@ -24,17 +30,22 @@ public class Student {
             return sum/grades.length;
         }
     }
-//    public boolean isExcellentStudent(){
-//        if (grades.length != 0){
-//            for (int grade : grades){
-//                if( grade == 1 ||
-//                    grade == 2 ||
-//                    grade == 3 ) return false;
-//            }
-//            return true;
-//        }
-//        return false;
-//    }
+    public Name getName() {
+        return new Name(name.getName(),name.getSurname(),name.getPatronymic());
+    }
+
+    public int[] getGrades() {
+        return Arrays.copyOf(grades,grades.length);
+    }
+
+    public void setGrades(int[] grades) {
+        for (int grade:grades){
+            if((grade <= 2) && (grade >= 5)){
+                throw new IllegalArgumentException("Оценки должны быть в диапазоне от 2 до 5 включительно");
+            }
+        }
+        this.grades = grades;
+    }
 
     public boolean isExcellentStudent(){
         if (grades.length != 0) {
