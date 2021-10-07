@@ -388,9 +388,9 @@ public class Start_1 {
         
         // 1.5.1 Пистолет
         
-        Gun g1 = new Gun(3);
-        g1.shoot(5);
-        System.out.println("----------");
+//        Gun g1 = new Gun(3);
+//        g1.shoot(5);
+//        System.out.println("----------");
         
         // 1.5.2 Кот 
         Cat b1 = new Cat("Барсик");
@@ -512,7 +512,16 @@ public class Start_1 {
         //1.6.4 Дроби
         Fraction fraction1 = new Fraction(-25,-25); //Exception in thread "main" java.lang.IllegalArgumentException: Знаменатель не может быть равен 0
         System.out.println(fraction1);
+        System.out.println("----------");
 
-        //1.6.5
+        //1.6.5 Перезарядка пистолета
+        Gun gun1 = new Gun(7);
+        gun1.reload(3);
+        gun1.shoot(5);
+        gun1.reload(8);
+        gun1.shoot(2);
+        gun1.discharge();
+        gun1.shoot(1);
+        System.out.println("----------");
     }
 }
