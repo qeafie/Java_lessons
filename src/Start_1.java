@@ -127,41 +127,41 @@ public class Start_1 {
 //
 //        System.out.println("----------");
 
-        //1.2.1 Прямая
-
-        Line l1 = new Line (new Point (1, 3), new Point (23, 8));
-        Line l2 = new Line (5, 10, 25, 10);
-        Line l3 = new Line (l1.start, l2.end);
-
-        // 1.2.1.3
-        System.out.println (l1);
-        System.out.println (l2);
-        System.out.println (l3);
-        System.out.println("----------");
-
-        //1.2.1.4
-        l1.start.x = -15;
-        l1.start.y = -20;
-        l1.end.x = 10;
-        l1.end.y = 1;
-
-        l2.start.x = 0;
-        l2.start.y = 5;
-        l2.end.x = 8;
-        l2.end.y = 1;
-
-        System.out.println (l1);
-        System.out.println (l2);
-        System.out.println (l3);
-        System.out.println("----------");
-
-        //1.2.1.5
-        l1.start = new Point(1,1);
-
-        System.out.println (l1);
-        System.out.println (l2);
-        System.out.println (l3);
-        System.out.println("----------");
+//        //1.2.1 Прямая
+//
+//        Line l1 = new Line (new Point (1, 3), new Point (23, 8));
+//        Line l2 = new Line (5, 10, 25, 10);
+//        Line l3 = new Line (l1.start, l2.end);
+//
+//        // 1.2.1.3
+//        System.out.println (l1);
+//        System.out.println (l2);
+//        System.out.println (l3);
+//        System.out.println("----------");
+//
+//        //1.2.1.4
+//
+//        l1.start.x = -15;
+//        l1.start.y = -20;
+//        l1.end.x = 10;
+//        l1.end.y = 1;
+//
+//        l2.start.x = 0;
+//        l2.start.y = 5;
+//        l2.end.x = 8;
+//        l2.end.y = 1;
+//        System.out.println (l1);
+//        System.out.println (l2);
+//        System.out.println (l3);
+//        System.out.println("----------");
+//
+//        //1.2.1.5
+//        l1.start = new Point(1,1);
+//
+//        System.out.println (l1);
+//        System.out.println (l2);
+//        System.out.println (l3);
+//        System.out.println("----------");
 
         //1.2.2
 
@@ -183,21 +183,21 @@ public class Start_1 {
 
         //1.2.3
 
-        Human h4 = new Human(new Name ("Иван","Чудов"),164,Sex.MALE);
-        Human h5 = new Human(new Name ("Пётр","Чудов"),178,Sex.MALE);
-        Human h6 = new Human(new Name ("Борис"),164,Sex.MALE);
-        Human h7 = new Human(n1,150,Sex.FEMALE);
-
-        h5.father = h4; //Иван отец Петра
-        h6.father = h5; //Пётр отец Борис
-        h7.father = h6;
-
-        System.out.println (h4);
-        System.out.println (h5);
-        System.out.println (h6);
-        System.out.println (h7);
-
-        System.out.println("----------");
+//        Human h4 = new Human(new Name ("Иван","Чудов"),164,Sex.MALE);
+//        Human h5 = new Human(new Name ("Пётр","Чудов"),178,Sex.MALE);
+//        Human h6 = new Human(new Name ("Борис"),164,Sex.MALE);
+//        Human h7 = new Human(n1,150,Sex.FEMALE);
+//
+//        h5.father = h4; //Иван отец Петра
+//        h6.father = h5; //Пётр отец Борис
+//        h7.father = h6;
+//
+//        System.out.println (h4);
+//        System.out.println (h5);
+//        System.out.println (h6);
+//        System.out.println (h7);
+//
+//        System.out.println("----------");
 
 
         //1.2.4
@@ -523,5 +523,29 @@ public class Start_1 {
         gun1.discharge();
         gun1.shoot(1);
         System.out.println("----------");
+
+        //1.6.6 Отдельные линии
+        Point startP = new Point(12,10);
+        Point endP = new Point(1,5);
+        Line line1 = new Line(startP,endP);
+        Line line2 = new Line(startP,endP);
+
+        System.out.println(line1);
+        System.out.println(line2);
+
+        line1.setStart(endP);
+        System.out.println(line1);
+        System.out.println(line2);
+        System.out.println("----------");
+
+        //1.6.7 Непустые имена
+        Name name1 = new Name("Денис","Владимирович",""); //Exception in thread "main" java.lang.IllegalArgumentException: Пустая строка не имя!
+        System.out.println(name1.getName());
+        System.out.println(name1);
+
+        //1.6.8 Человек меняется
+
+
+        //1.6.9 Диапазон оценок
     }
 }
