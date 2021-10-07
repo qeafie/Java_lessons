@@ -510,5 +510,9 @@ public class Start_1 {
 //        System.out.println("----------");
 
         //1.6.4 Дроби
+        Fraction fraction1 = new Fraction(-25,-25); //Exception in thread "main" java.lang.IllegalArgumentException: Знаменатель не может быть равен 0
+        System.out.println(fraction1);
+
+        //1.6.5
     }
 }

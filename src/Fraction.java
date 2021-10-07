@@ -5,10 +5,23 @@ public class Fraction {
     private final int denominator;
     
     public Fraction(int numerator, int denominator){
-        if (denominator<=0)
-            throw new IllegalArgumentException("Знаменатель не может быть <=0");
+        if (denominator == 0)
+            throw new IllegalArgumentException("Знаменатель не может быть равен 0");
+
+        if (denominator < 0){
+            this.denominator = Math.abs(denominator);
+            if (numerator > 0){
+                numerator = -numerator;
+            }
+            else{
+                numerator = Math.abs(numerator);
+            }
+
+        }else{
+            this.denominator = denominator;
+        }
+
         this.numerator = numerator;
-        this.denominator = denominator;
     }
 
     public Fraction addition(int number){
