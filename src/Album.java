@@ -1,13 +1,16 @@
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Album {
-    String title;
-    String author;
-    MusicTrack[] tracks;
-    int countMusicTrack;
+    private String title;
+    private String author;
+    private List <MusicTrack> tracks;
+    
 
     public Album(String title){
         this.title = title;
-        tracks = new MusicTrack[10];
-        countMusicTrack = 0;
+        tracks = new ArrayList<MusicTrack>();
     }
     public Album(String title,String author){
         this(title);
@@ -15,9 +18,17 @@ public class Album {
     }
 
     public void addTrack(MusicTrack track){
-        tracks[countMusicTrack++] = track;
+        tracks.add(track);
     }
-
+    
+    public String getTitle (){
+        return title;
+    }
+    
+    public String getAuthor(){
+        return author;
+    }
+    
     @Override
     public String toString(){
         String tempStr = "Альбом: " + title + " Автор: " + author + "\n";

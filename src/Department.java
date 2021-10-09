@@ -22,6 +22,7 @@ public class Department{
     public void setBoss(Employee boss) {
         if (this.boss == null)
             this.boss = boss;
+            boss.setDepartment(this);
     }
 
     public void setTitle(String title) {

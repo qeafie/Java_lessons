@@ -14,33 +14,33 @@ public Human (String name, int height){
     this(new Name(name),height);
 }
 
-public Human (String name, int height, Human father){
-    this(name,height);
-    this.father = father;
-    this.name.setPatronymic(father.name.getName() + Name.SUFFIX_MALE);
-}
+//public Human (String name, int height, Human father){
+//    this(name,height);
+//    this.father = father;
+//    this.name.setPatronymic(father.name.getName() + Name.SUFFIX_MALE);
+//}
 
 public Human(Name name, int height,Sex sex){
     this(name,height);
     this.height = height;
     this.sex = sex;
 }
-public Human (Name name, int height, Sex sex, Human father){
-    this(name,height,sex);
-    this.father = father;
-    if(name.getSurname() == null){
-        name.setSurname(father.name.getSurname());
-    }
-    if(name.getPatronymic() == null){
-        if (sex == Sex.MALE){
-            name.setPatronymic(father.name.getName() + Name.SUFFIX_MALE);
-        }
-        else{
-            name.setPatronymic(father.name.getName() + Name.SUFFIX_FEMALE);
-            name.setSurname(name.getSurname() + "a");
-        }
-    }
-}
+//public Human (Name name, int height, Sex sex, Human father){
+//    this(name,height,sex);
+//    this.father = father;
+//    if(name.getSurname() == null){
+//        name.setSurname(father.name.getSurname());
+//    }
+//    if(name.getPatronymic() == null){
+//        if (sex == Sex.MALE){
+//            name.setPatronymic(father.name.getName() + Name.SUFFIX_MALE);
+//        }
+//        else{
+//            name.setPatronymic(father.name.getName() + Name.SUFFIX_FEMALE);
+//            name.setSurname(name.getSurname() + "a");
+//        }
+//    }
+//}
 
     public void setHeight(int height) {
         this.height = height;
