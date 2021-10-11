@@ -30,7 +30,7 @@ public class Line {
     }
     
     public int getDistance(){
-        return (int)Math.sqrt(Math.pow((end.x - start.x),2) + Math.pow((end.y - start.y),2));
+        return (int)Math.sqrt(Math.pow((end.getX() - start.getX()),2) + Math.pow((end.getY() - start.getY()),2));
     }
     
     public String toString(){

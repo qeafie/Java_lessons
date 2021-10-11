@@ -1,17 +1,19 @@
 
 public class Gun {
     private int countOfAmmo;
-    private final int MAX_AMMO;
+    private final int maxAmmo;
 
-    public Gun(int MAX_AMMO){
-        this.MAX_AMMO = MAX_AMMO;
+    public Gun(int maxAmmo){
+        if (maxAmmo < 0)
+            throw new IllegalArgumentException("Максимальное кол-во патронов должно быть положительным числом");
+        this.maxAmmo = maxAmmo;
     }
 
-    public Gun(int countOfAmmo, int MAX_AMMO){
-        if (countOfAmmo > MAX_AMMO)
+    public Gun(int countOfAmmo, int maxAmmo){
+        if (countOfAmmo > maxAmmo)
             throw new IllegalArgumentException("Количество патронов должно быть меньше или равно максимальному кол-во патронов");
         this.countOfAmmo = countOfAmmo;
-        this.MAX_AMMO = MAX_AMMO;
+        this.maxAmmo = maxAmmo;
 
     }
 
@@ -19,17 +21,17 @@ public class Gun {
         return countOfAmmo;
     }
 
-    public int getMAX_AMMO() {
-        return MAX_AMMO;
+    public int getMaxAmmo() {
+        return maxAmmo;
     }
 
     public int reload(int countOfAmmo){
         if (countOfAmmo < 0)
             throw new IllegalArgumentException("Кол-во перезаряжаемых патронов должно быть больше нуля");
 
-        if (countOfAmmo > getMAX_AMMO()){
-            this.countOfAmmo = getMAX_AMMO();
-            return countOfAmmo - getMAX_AMMO();
+        if (countOfAmmo > getMaxAmmo()){
+            this.countOfAmmo = getMaxAmmo();
+            return countOfAmmo - getMaxAmmo();
         }
         else {
             this.countOfAmmo = countOfAmmo;
@@ -46,17 +48,24 @@ public class Gun {
        if(getCountOfAmmo() == 0) return false;
        return true;
     }
+
+    public void shoot(){
+        if(countOfAmmo > 0){
+            System.out.println("Бах!");
+            countOfAmmo--;
+        }else {
+            System.out.println("Клац");
+        }
+    }
+
     public void shoot(int shoot){
-        while (shoot > 0){
+        for (int i = shoot; i > 0; i--){
             if(countOfAmmo > 0){
                 System.out.println("Бах!");
                 countOfAmmo--;
             }else {
                 System.out.println("Клац");
             }
-            shoot--;
         }
-
-        
     }
 }

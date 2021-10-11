@@ -15,9 +15,9 @@ public class Square {
 
     public Polyline getPolyline(){
         return new Polyline(point, //левый верхний
-                new Point(point.x + sideLength, point.y),//правый верхний
-                new Point(point.x + sideLength, point.y - sideLength), // правый нижний
-                new Point(point.x, point.y - sideLength) //левый нижний
+                new Point(point.getX() + sideLength, point.getY()),//правый верхний
+                new Point(point.getX() + sideLength, point.getY() - sideLength), // правый нижний
+                new Point(point.getX(), point.getY() - sideLength) //левый нижний
                 );
     }
 

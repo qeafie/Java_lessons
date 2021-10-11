@@ -2,7 +2,7 @@ public class Human {
 private Name name;
 private int height;
 private Sex sex;
-private final Human father;
+private  Human father;
 
 public Human(Name name, int height){
     if ((height < 0) || (height>500))

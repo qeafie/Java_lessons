@@ -45,6 +45,8 @@ public class Time {
    public String toString(){
        
        
-       return hour + ":" + minutes + ":" + seconds;
+       return (hour/10 >= 1 ? hour : "0"+hour) + ":" +
+               (minutes/10 >= 1 ? minutes : "0" + minutes) + ":" +
+               (seconds/10 >= 1 ? seconds : "0" + seconds) +" ";
    }
 }

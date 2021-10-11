@@ -489,8 +489,8 @@ public class Start_1 {
         Polyline p2 = square.getPolyline();
         System.out.println("Длина ломаной линии: "+ p2.getDistance());
         
-        p2.polyline.get(p2.polyline.size() - 1).x = 15;
-        p2.polyline.get(p2.polyline.size() - 1).y = 25;
+        p2.polyline.get(p2.polyline.size() - 1).setX(15);
+        p2.polyline.get(p2.polyline.size() - 1).setY(25);
         System.out.println("Длина ломаной линии: "+ p2.getDistance());
         System.out.println("----------");
 
@@ -551,7 +551,15 @@ public class Start_1 {
         //1.6.10
         
         //практика 08.10.2021
-        
-        
+
+        ImprovedTime time1 = new ImprovedTime(40121, new TimeZone(12,30));
+        System.out.println(time1);
+
+
+        MachineGun m1 = new MachineGun(3,3);
+        m1.reload(5);
+        m1.shoot();
+        m1.shoot(5);
+
     }
 }
