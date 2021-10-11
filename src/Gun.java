@@ -1,5 +1,5 @@
 
-public class Gun {
+public class Gun{
     private int countOfAmmo;
     private final int maxAmmo;
 

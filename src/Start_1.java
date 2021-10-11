@@ -1,6 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class Start_1 {
 
     public static void main(String[] args) throws CloneNotSupportedException{
@@ -561,5 +558,14 @@ public class Start_1 {
         m1.shoot();
         m1.shoot(5);
 
+        System.out.println(f1);
+        System.out.println(new Fraction(1,1).doubleValue());
+        System.out.println("----------");
+
+        Cuckoo cuckoo = new Cuckoo();
+        cuckoo.sing();
+
+        Parrot parrot = new Parrot("Привет мир!");
+        parrot.sing();
     }
 }

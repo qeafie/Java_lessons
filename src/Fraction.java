@@ -1,5 +1,5 @@
 
-public final class Fraction {
+public final class Fraction extends Number{
     
     private final int numerator;
     private final int denominator;
@@ -71,6 +71,33 @@ public final class Fraction {
 
     public int getDenominator() {
         return denominator;
+    }
+
+    public int intValue(){
+        if (numerator == denominator)
+            return 1;
+
+        if (numerator < denominator)
+            return 0;
+
+        return numerator/denominator;
+
+    }
+    public long longValue(){
+        if (numerator == denominator)
+            return 1;
+
+        if (numerator < denominator)
+            return 0;
+
+        return numerator/denominator;
+    }
+    public double doubleValue(){
+        return numerator / (double)denominator;
+    }
+
+    public float floatValue(){
+        return numerator / (float)denominator;
     }
 
     @Override
