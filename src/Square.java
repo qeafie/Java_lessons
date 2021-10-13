@@ -1,12 +1,11 @@
-public class Square {
-    Point point;
+public class Square extends Shape{
     private int sideLength;
 
     public Square (Point point, int sideLength){
+        super(point);
         if (sideLength<=0){
             throw new IllegalArgumentException("Длина должна быть больше 0");
         }
-        this.point = point;
         this.sideLength = sideLength;
     }
     public Square (int x, int y, int sideLength){
@@ -14,10 +13,10 @@ public class Square {
     }
 
     public Polyline getPolyline(){
-        return new Polyline(point, //левый верхний
-                new Point(point.getX() + sideLength, point.getY()),//правый верхний
-                new Point(point.getX() + sideLength, point.getY() - sideLength), // правый нижний
-                new Point(point.getX(), point.getY() - sideLength) //левый нижний
+        return new Polyline(getPoint(), //левый верхний
+                new Point(getPoint().getX() + sideLength, getPoint().getY()),//правый верхний
+                new Point(getPoint().getX() + sideLength, getPoint().getY() - sideLength), // правый нижний
+                new Point(getPoint().getX(), getPoint().getY() - sideLength) //левый нижний
                 );
     }
 
@@ -31,8 +30,14 @@ public class Square {
         return sideLength;
     }
 
+
+    @Override
+    public int getArea() {
+        return sideLength*sideLength;
+    }
+
     @Override
     public String toString() {
-        return "Квадрат в точке " + point + " со стороной " + sideLength;
+        return "Квадрат в точке " + getPoint() + " со стороной " + sideLength;
     }
 }
