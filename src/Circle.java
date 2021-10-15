@@ -3,7 +3,7 @@ public class Circle extends Shape{
 
     Circle(Point point,int radius){
         super(point);
-        if (radius > 0)
+        if (radius < 0)
             throw new IllegalArgumentException("Радиус должен быть больше нуля");
         this.radius = radius;
     }

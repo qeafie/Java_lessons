@@ -1,5 +1,5 @@
 
-public class Cat {
+public class Cat implements CanMeow {
     String name;
     
     
@@ -10,9 +10,9 @@ public class Cat {
         return "кот: " + name;
     }
     
-    public void meow(){
-        System.out.println(name + " мяу!");
-    }
+//    public void meow(){
+//        System.out.println(name + " мяу!");
+//    }
     
     public void meow(int n){
        String tempStr = name + ": ";
