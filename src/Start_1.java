@@ -1,11 +1,34 @@
+import ru.shonin.animals.*;
+import ru.shonin.city.City;
+import ru.shonin.city.House;
+import ru.shonin.city.ImprovedCity;
+import ru.shonin.city.Path;
+import ru.shonin.geometry.*;
+import ru.shonin.music.Album;
+import ru.shonin.music.MusicTrack;
+import ru.shonin.person.Human;
+import ru.shonin.person.Name;
+import ru.shonin.person.RecordBook;
+import ru.shonin.person.RecordResult;
+import ru.shonin.publication.Comments;
+import ru.shonin.service.Fraction;
+import ru.shonin.service.ImprovedTime;
+import ru.shonin.service.Time;
+import ru.shonin.service.TimeZone;
+import ru.shonin.weapon.Gun;
+import ru.shonin.weapon.MachineGun;
+
+import static java.lang.Math.*;
+import static java.lang.Double.*;
+
 public class Start_1 {
 
-    public static void main(String[] args) throws CloneNotSupportedException{
+    public static void main(String[] args) throws CloneNotSupportedException {
 
 //        //1.1.1 Точка координат
-//        Point p1 = new Point();
-//        Point p2 = new Point();
-//        Point p3 = new Point();
+//        ru.shonin.geometry.Point p1 = new ru.shonin.geometry.Point();
+//        ru.shonin.geometry.Point p2 = new ru.shonin.geometry.Point();
+//        ru.shonin.geometry.Point p3 = new ru.shonin.geometry.Point();
 //
 //        p1.x = 5;
 //        p1.y = 6;
@@ -24,9 +47,9 @@ public class Start_1 {
 //
 //        //1.1.2 Коментарий
 //
-//        Comments c1 = new Comments();
-//        Comments c2 = new Comments();
-//        Comments c3 = new Comments();
+//        ru.shonin.publication.Comments c1 = new ru.shonin.publication.Comments();
+//        ru.shonin.publication.Comments c2 = new ru.shonin.publication.Comments();
+//        ru.shonin.publication.Comments c3 = new ru.shonin.publication.Comments();
 //
 //        c1.rating = 100;
 //        c1.text = "Ух ты";
@@ -46,9 +69,9 @@ public class Start_1 {
 //
 //        //1.1.3 Человек
 //
-//        Human h1 = new Human();
-//        Human h2 = new Human();
-//        Human h3 = new Human();
+//        ru.shonin.person.Human h1 = new ru.shonin.person.Human();
+//        ru.shonin.person.Human h2 = new ru.shonin.person.Human();
+//        ru.shonin.person.Human h3 = new ru.shonin.person.Human();
 //
 //        h1.name = "Клеопатра";
 //        h1.height = 152;
@@ -67,9 +90,9 @@ public class Start_1 {
 //        System.out.println("----------");
 //
 //        //1.1.4 Имена
-//        Name n1 = new Name();
-//        Name n2 = new Name();
-//        Name n3 = new Name();
+//        ru.shonin.person.Name n1 = new ru.shonin.person.Name();
+//        ru.shonin.person.Name n2 = new ru.shonin.person.Name();
+//        ru.shonin.person.Name n3 = new ru.shonin.person.Name();
 //
 //        n1.firstName = "Клеопатра";
 //
@@ -88,9 +111,9 @@ public class Start_1 {
 //
 //        //1.1.5 Время
 //
-//        Time t1 = new Time();
-//        Time t2 = new Time();
-//        Time t3 = new Time();
+//        ru.shonin.service.Time t1 = new ru.shonin.service.Time();
+//        ru.shonin.service.Time t2 = new ru.shonin.service.Time();
+//        ru.shonin.service.Time t3 = new ru.shonin.service.Time();
 //
 //        t1.numberOfSeconds = 10;
 //        t2.numberOfSeconds = 10_000;
@@ -101,7 +124,7 @@ public class Start_1 {
 //        System.out.println(t3);
 //
 //
-//        Time t4 = new Time();
+//        ru.shonin.service.Time t4 = new ru.shonin.service.Time();
 //        t4.numberOfSeconds = 100_000_000;
 //        System.out.println(t4);
 //        System.out.println("----------");
@@ -109,9 +132,9 @@ public class Start_1 {
 //
 //        //1.1.6 Дом
 //
-//        House d1 = new House();
-//        House d2 = new House();
-//        House d3 = new House();
+//        ru.shonin.city.House d1 = new ru.shonin.city.House();
+//        ru.shonin.city.House d2 = new ru.shonin.city.House();
+//        ru.shonin.city.House d3 = new ru.shonin.city.House();
 //
 //
 //        d1.numberOfFloors = 1;
@@ -126,9 +149,9 @@ public class Start_1 {
 
 //        //1.2.1 Прямая
 //
-//        Line l1 = new Line (new Point (1, 3), new Point (23, 8));
-//        Line l2 = new Line (5, 10, 25, 10);
-//        Line l3 = new Line (l1.start, l2.end);
+//        ru.shonin.geometry.Line l1 = new ru.shonin.geometry.Line (new ru.shonin.geometry.Point (1, 3), new ru.shonin.geometry.Point (23, 8));
+//        ru.shonin.geometry.Line l2 = new ru.shonin.geometry.Line (5, 10, 25, 10);
+//        ru.shonin.geometry.Line l3 = new ru.shonin.geometry.Line (l1.start, l2.end);
 //
 //        // 1.2.1.3
 //        System.out.println (l1);
@@ -153,7 +176,7 @@ public class Start_1 {
 //        System.out.println("----------");
 //
 //        //1.2.1.5
-//        l1.start = new Point(1,1);
+//        l1.start = new ru.shonin.geometry.Point(1,1);
 //
 //        System.out.println (l1);
 //        System.out.println (l2);
@@ -168,7 +191,7 @@ public class Start_1 {
         Name n4 = new Name ("Христофор","Бонифатьевич");
 
 
-        //Human h1 = new Human (n1);
+        //ru.shonin.person.Human h1 = new ru.shonin.person.Human (n1);
         Human h2 = new Human (n2,167);
         Human h3 = new Human (n3,189);
 
@@ -180,10 +203,10 @@ public class Start_1 {
 
         //1.2.3
 
-//        Human h4 = new Human(new Name ("Иван","Чудов"),164,Sex.MALE);
-//        Human h5 = new Human(new Name ("Пётр","Чудов"),178,Sex.MALE);
-//        Human h6 = new Human(new Name ("Борис"),164,Sex.MALE);
-//        Human h7 = new Human(n1,150,Sex.FEMALE);
+//        ru.shonin.person.Human h4 = new ru.shonin.person.Human(new ru.shonin.person.Name ("Иван","Чудов"),164,ru.shonin.person.Sex.MALE);
+//        ru.shonin.person.Human h5 = new ru.shonin.person.Human(new ru.shonin.person.Name ("Пётр","Чудов"),178,ru.shonin.person.Sex.MALE);
+//        ru.shonin.person.Human h6 = new ru.shonin.person.Human(new ru.shonin.person.Name ("Борис"),164,ru.shonin.person.Sex.MALE);
+//        ru.shonin.person.Human h7 = new ru.shonin.person.Human(n1,150,ru.shonin.person.Sex.FEMALE);
 //
 //        h5.father = h4; //Иван отец Петра
 //        h6.father = h5; //Пётр отец Борис
@@ -199,9 +222,9 @@ public class Start_1 {
 
         //1.2.4
 //
-//        Employee e1 = new Employee(new Name("Петров"),new Department("IT"));
-//        Employee e2 = new Employee(new Name("Козлов"),e1.department);
-//        Employee e3 = new Employee(new Name("Сидоров"),e1.department);
+//        ru.shonin.person.Employee e1 = new ru.shonin.person.Employee(new ru.shonin.person.Name("Петров"),new ru.shonin.person.Department("IT"));
+//        ru.shonin.person.Employee e2 = new ru.shonin.person.Employee(new ru.shonin.person.Name("Козлов"),e1.department);
+//        ru.shonin.person.Employee e3 = new ru.shonin.person.Employee(new ru.shonin.person.Name("Сидоров"),e1.department);
 //        e1.department.boss = e2;
 //
 //        System.out.println (e1);
@@ -250,11 +273,11 @@ public class Start_1 {
 
 
 //        // 1.3.1.1 Студент
-//        Student s1 = new Student(new Name("Вася"),3,4,5);
+//        ru.shonin.person.Student s1 = new ru.shonin.person.Student(new ru.shonin.person.Name("Вася"),3,4,5);
 //        System.out.println(s1);
 //
 //        // 1.3.1.2
-//        Student s2 = new Student(new Name("Петя"),s1.grades);
+//        ru.shonin.person.Student s2 = new ru.shonin.person.Student(new ru.shonin.person.Name("Петя"),s1.grades);
 //        System.out.println(s2);
 //        System.out.println("----------");
 //
@@ -268,7 +291,7 @@ public class Start_1 {
 //        */
 
 //        // 1.3.1.4
-//        Student s3 = new Student(new Name("Андрей"),s1.grades.clone());
+//        ru.shonin.person.Student s3 = new ru.shonin.person.Student(new ru.shonin.person.Name("Андрей"),s1.grades.clone());
 //        System.out.println(s3);
 //        System.out.println("----------");
 //
@@ -305,43 +328,43 @@ public class Start_1 {
 
 
         // 1.3.3 Города
-        City cityA = new City("A");
-        City cityB = new City("B");
-        City cityC = new City("C");
-        City cityD = new City("D");
-        City cityE = new City("E");
-        City cityF = new City("F");
-
-        cityA.addPath(new Path(cityF,1));
-        cityA.addPath(new Path(cityB,5));
-        cityA.addPath(new Path(cityD,6));
-
-        cityB.addPath(new Path(cityA,5));
-        cityB.addPath(new Path(cityF,1));
-        cityB.addPath(new Path(cityC,3));
-
-        cityC.addPath(new Path(cityB,3));
-        cityC.addPath(new Path(cityD,4));
-
-        cityD.addPath(new Path(cityC,4));
-        cityD.addPath(new Path(cityE,2));
-        cityD.addPath(new Path(cityA,6));
-
-        cityE.addPath(new Path(cityD,2));
-        cityE.addPath(new Path(cityF,2));
-
-        cityF.addPath(new Path(cityA,1));
-        cityF.addPath(new Path(cityB,1));
-        cityF.addPath(new Path(cityE,2));
-
-        System.out.println(cityA);
-        System.out.println(cityB);
-        System.out.println(cityC);
-        System.out.println(cityD);
-        System.out.println(cityE);
-        System.out.println(cityF);
-
-        System.out.println("----------");
+//        ru.shonin.city.City cityA = new ru.shonin.city.City("A");
+//        ru.shonin.city.City cityB = new ru.shonin.city.City("B");
+//        ru.shonin.city.City cityC = new ru.shonin.city.City("C");
+//        ru.shonin.city.City cityD = new ru.shonin.city.City("D");
+//        ru.shonin.city.City cityE = new ru.shonin.city.City("E");
+//        ru.shonin.city.City cityF = new ru.shonin.city.City("F");
+//
+//        cityA.addPath(new ru.shonin.city.Path(cityF,1));
+//        cityA.addPath(new ru.shonin.city.Path(cityB,5));
+//        cityA.addPath(new ru.shonin.city.Path(cityD,6));
+//
+//        cityB.addPath(new ru.shonin.city.Path(cityA,5));
+//        cityB.addPath(new ru.shonin.city.Path(cityF,1));
+//        cityB.addPath(new ru.shonin.city.Path(cityC,3));
+//
+//        cityC.addPath(new ru.shonin.city.Path(cityB,3));
+//        cityC.addPath(new ru.shonin.city.Path(cityD,4));
+//
+//        cityD.addPath(new ru.shonin.city.Path(cityC,4));
+//        cityD.addPath(new ru.shonin.city.Path(cityE,2));
+//        cityD.addPath(new ru.shonin.city.Path(cityA,6));
+//
+//        cityE.addPath(new ru.shonin.city.Path(cityD,2));
+//        cityE.addPath(new ru.shonin.city.Path(cityF,2));
+//
+//        cityF.addPath(new ru.shonin.city.Path(cityA,1));
+//        cityF.addPath(new ru.shonin.city.Path(cityB,1));
+//        cityF.addPath(new ru.shonin.city.Path(cityE,2));
+//
+//        System.out.println(cityA);
+//        System.out.println(cityB);
+//        System.out.println(cityC);
+//        System.out.println(cityD);
+//        System.out.println(cityE);
+//        System.out.println(cityF);
+//
+//        System.out.println("----------");
 
         // 1.3.4 Песни и ссылки
 
@@ -385,7 +408,7 @@ public class Start_1 {
         
         // 1.5.1 Пистолет
         
-//        Gun g1 = new Gun(3);
+//        ru.shonin.weapon.Gun g1 = new ru.shonin.weapon.Gun(3);
 //        g1.shoot(5);
 //        System.out.println("----------");
         
@@ -403,8 +426,8 @@ public class Start_1 {
         
         //Практика цыгане
 //        int i = 10;
-//        City tempCity = cityA;
-//        Path[] checkedPath= new Path[10];
+//        ru.shonin.city.City tempCity = cityA;
+//        ru.shonin.city.Path[] checkedPath= new ru.shonin.city.Path[10];
 //        while(i>0){
         
 //        for(int i = 0; i < checkedPath.length; i++){
@@ -445,7 +468,7 @@ public class Start_1 {
 
         //практика 2.10.2021
 
-        //House houseTest = new House(-1);
+        //ru.shonin.city.House houseTest = new ru.shonin.city.House(-1);
 
         //1.5.5
         Fraction f1 = new Fraction(1,3);
@@ -464,8 +487,8 @@ public class Start_1 {
 
         //1.5.6 Студент отличник
 
-//        Student vasya = new Student(new Name("Вася"),3,4,5,4);
-//        Student petya = new Student(new Name("Петя"),5,5,5,5);
+//        ru.shonin.person.Student vasya = new ru.shonin.person.Student(new ru.shonin.person.Name("Вася"),3,4,5,4);
+//        ru.shonin.person.Student petya = new ru.shonin.person.Student(new ru.shonin.person.Name("Петя"),5,5,5,5);
 //
 //        System.out.println(vasya.name + "Средний балл: " + vasya.getAverageRating() + ", Отличник? - " + vasya.isExcellentStudent());
 //        System.out.println(petya.name + "Средний балл: " + petya.getAverageRating() + ", Отличник? - " + petya.isExcellentStudent());
@@ -493,15 +516,15 @@ public class Start_1 {
 
 
         //1.6.1 Дом над землей
-        //House houseTest = new House(5);   //Exception in thread "main" java.lang.IllegalArgumentException
-        //houseTest.numberOfFloors = 0;                  //numberOfFloors has private access in House
+        //ru.shonin.city.House houseTest = new ru.shonin.city.House(5);   //Exception in thread "main" java.lang.IllegalArgumentException
+        //houseTest.numberOfFloors = 0;                  //numberOfFloors has private access in ru.shonin.city.House
 
 
         //1.6.2 Время
 
         //1.6.3 Сторона Квадрата
 
-//        Square square1 = new Square(new Point(1,1),-12); //Exception in thread "main" java.lang.IllegalArgumentException: Длина должна быть больше 0
+//        ru.shonin.geometry.Square square1 = new ru.shonin.geometry.Square(new ru.shonin.geometry.Point(1,1),-12); //Exception in thread "main" java.lang.IllegalArgumentException: Длина должна быть больше 0
 //        square1.setSideLength(-12); //Exception in thread "main" java.lang.IllegalArgumentException: Длина должна быть больше 0
 //        System.out.println(square1.getSideLength());
 //        System.out.println("----------");
@@ -590,10 +613,42 @@ public class Start_1 {
 
         //3.3.4 Мяуканье
 
-    }
+        meow(new Cat("Барсик"), new Cat("Белка"),/*new Square(new Point(1,2),5)*/);
 
+        System.out.println("----------");
+
+        //3.3.5 Измерение длины
+        System.out.println(sumOfLengths(poly,p1));
+        System.out.println("----------");
+
+        //3.3.6 Замкнутый квадрат
+
+        City cityA = new ImprovedCity("A");
+        City cityB = new City("B");
+        City cityC = new City("C");
+        City cityD = new ImprovedCity("D");
+        City cityE = new City("E");
+
+        cityA.addPath(new Path(cityB));
+        cityA.addPath(new Path(cityC));
+
+        cityB.addPath(new Path(cityC));
+
+        cityD.addPath(new Path(cityB));
+        cityD.addPath(new Path(cityE));
+
+        cityE.addPath(new Path(cityC));
+
+        //практика 16.10
+        Point point = new Point(5,6);
+        java.awt.Point point1 = new java.awt.Point(4,7);
+
+    }
+    static double stringPow(String str1,String str2){
+        return pow(parseDouble(str1),parseDouble(str2));
+    }
     //3.3.1 Сложение
-    static double sum(Number ...numbers){
+     static double sum(Number ...numbers){
         double temp = 0;
         for (Number number: numbers){
             temp+=number.doubleValue();
@@ -621,6 +676,25 @@ public class Start_1 {
     static void meow(CanMeow... canMeows){
         for (CanMeow canMeow: canMeows)
             canMeow.meow();
+    }
+
+    //3.3.5 Измерение длины
+    static int sumOfLengths(CanReturnDistance...objects){
+        int temp=0;
+        for (CanReturnDistance obj:objects){
+            temp += obj.getDistance();
+        }
+        return temp;
+    }
+
+    //3.3.7  Ломай меня полностью
+
+    static Polyline sumPolyline(CanGetPolyLine... polyLines){
+        Polyline polyline = new Polyline();
+        for (CanGetPolyLine polyLine:polyLines){
+            polyline.polyline.addAll(polyLine.getPolyline().polyline);
+        }
+        return polyline;
     }
 
 }
