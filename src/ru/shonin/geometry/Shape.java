@@ -1,8 +1,6 @@
 package ru.shonin.geometry;
 
-import ru.shonin.geometry.Point;
-
-abstract class Shape {
+public abstract class Shape {
     private Point point;
     Shape(Point point){
         this.point = point;
@@ -15,5 +13,5 @@ abstract class Shape {
         this.point = point;
     }
 
-    abstract int getArea();
+    public abstract int getArea();
 }

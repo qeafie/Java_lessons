@@ -2,7 +2,7 @@ package ru.shonin.geometry;
 
 import java.util.Objects;
 
-public class Point {
+public class Point implements Cloneable{
     private int x;
     private int y;
     
@@ -28,6 +28,10 @@ public class Point {
         this.y = y;
     }
 
+    public int getDistance(Point point){
+        return (int)Math.sqrt(Math.pow((point.getX() - x),2) + Math.pow((point.getY() - y),2));
+    }
+
     public String toString(){
         return "{" + x + ";" + y + "}"; 
     }
@@ -43,6 +47,11 @@ public class Point {
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
+    }
+
+    @Override
+    public Point clone(){
+        return new Point(x,y);
     }
 }
 

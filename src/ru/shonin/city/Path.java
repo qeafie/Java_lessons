@@ -1,13 +1,15 @@
 package ru.shonin.city;
 
+import java.util.Objects;
+
 public class Path {
     private City city;
     private int cost;
 
-    Path(City city){
+    public Path(City city){
         this.city = city;
     }
-    Path(City city,int cost){
+    public Path(City city,int cost){
         this(city);
         this.cost = cost;
     }
@@ -25,5 +27,18 @@ public class Path {
     }
     public String toString(){
         return city.getName() + ": " + cost;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Path path = (Path) o;
+        return (cost == path.cost) && (Objects.equals(city.getName(), path.city.getName()));
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(city, cost);
     }
 }

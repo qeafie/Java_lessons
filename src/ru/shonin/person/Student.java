@@ -2,7 +2,7 @@ package ru.shonin.person;
 
 import java.util.Arrays;
 
-public class Student {
+public class Student implements ru.shonin.generalizedСlasses.Comparable<Student> , Comparable<Student> {
     private Name name;
     private int [] grades;
     
@@ -66,5 +66,17 @@ public class Student {
         }
         tempGrades += "\b";
         return name +": [" + tempGrades +"]";
+    }
+
+    public int compare(Student obj){
+        if (this.getAverageRating() > obj.getAverageRating()) return 1;
+        if (this.getAverageRating() == obj.getAverageRating()) return 0;
+        else return -1;
+    }
+
+    public int compareTo(Student obj){
+        if (this.getAverageRating() > obj.getAverageRating()) return 1;
+        if (this.getAverageRating() == obj.getAverageRating()) return 0;
+        else return -1;
     }
 }

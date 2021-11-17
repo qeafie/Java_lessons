@@ -1,8 +1,8 @@
 package ru.shonin.person;
 
 public class Department{
-    private String title;
-    private Employee boss;
+    String title;
+    Employee boss;
     
     public Department(String title){
         this.title = title;
@@ -22,13 +22,14 @@ public class Department{
     }
 
     public void setBoss(Employee boss) {
-        if (this.boss == null)
+        if (this.boss == null){
             this.boss = boss;
             boss.setDepartment(this);
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+        }
+        else {
+            this.boss.department = null;
+            this.boss = boss;
+        }
     }
 
     public String toString (){

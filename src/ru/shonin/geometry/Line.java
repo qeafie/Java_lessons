@@ -2,39 +2,39 @@ package ru.shonin.geometry;
 
 import java.util.Objects;
 
-public class Line {
+public class Line<T extends Point> implements Cloneable, CanReturnDistance{
 
-    private Point start;
-    private Point end;
+    private T start;
+    private T end;
     
     
-    public Line(Point start, Point end){
-        this.start = start;
-        this.end = end;
+    public Line(T start, T end){
+        this.start = (T)start.clone();
+        this.end = (T)end.clone();
     }
 
-    public void setStart(Point start) {
-        this.start = start;
+    public void setStart(T start) {
+        this.start = (T) start.clone();
     }
 
-    public void setEnd(Point end) {
-        this.end = end;
+    public void setEnd(T end) {
+        this.end = (T)end.clone();
     }
 
-    public Point getStart() {
-        return start;
+    public T getStart() {
+        return (T) start.clone();
     }
 
-    public Point getEnd() {
-        return end;
+    public T getEnd() {
+        return (T) end.clone();
     }
 
-    public Line(int x1, int y1, int x2, int y2){
-        this(new Point(x1,y1),new Point(x2,y2));
-    }
+//    public Line(int x1, int y1, int x2, int y2){
+//        this(new Point(x1,y1),new Point(x2,y2));
+//    }
     
     public int getDistance(){
-        return (int)Math.sqrt(Math.pow((end.getX() - start.getX()),2) + Math.pow((end.getY() - start.getY()),2));
+        return start.getDistance(end);
     }
     
     public String toString(){
@@ -52,5 +52,10 @@ public class Line {
     @Override
     public int hashCode() {
         return Objects.hash(start, end);
+    }
+
+    @Override
+    public Line clone(){
+        return new Line(start.clone(),end.clone());
     }
 }

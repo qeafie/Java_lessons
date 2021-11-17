@@ -1,17 +1,17 @@
 package ru.shonin.weapon;
 
-public class Gun {
-    private int countOfAmmo;
-    private final int maxAmmo;
+public class Gun extends Weapon{
+    //private int countOfAmmo;
+    protected final int maxAmmo;
 
-    public Gun(int maxAmmo){
-        if (maxAmmo < 0)
-            throw new IllegalArgumentException("Максимальное кол-во патронов должно быть положительным числом");
-        this.maxAmmo = maxAmmo;
-    }
+//    public Gun(int maxAmmo){
+//        if (maxAmmo < 0)
+//            throw new IllegalArgumentException("Максимальное кол-во патронов должно быть положительным числом");
+//        this.maxAmmo = maxAmmo;
+//    }
 
     public Gun(int countOfAmmo, int maxAmmo){
-
+        super(countOfAmmo);
         if (countOfAmmo > maxAmmo)
             throw new IllegalArgumentException("Количество патронов должно быть меньше или равно максимальному кол-во патронов");
 

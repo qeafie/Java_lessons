@@ -1,25 +1,25 @@
 package ru.shonin.weapon;
 
 abstract class Weapon {
-    private int ammo;
+    protected int countOfAmmo;
 
     public Weapon(int ammo){
         if (ammo < 0) throw new RuntimeException();
-        this.ammo = ammo;
+        this.countOfAmmo = ammo;
     }
 
     abstract void shoot();
 
-    public int ammo(){return ammo;}
+    public int ammo(){return countOfAmmo;}
 
     public boolean getAmmo(){
-        if (ammo == 0) return false;
-        ammo--;
+        if (countOfAmmo == 0) return false;
+        countOfAmmo--;
         return true;
     }
 
     public void load(int ammo){
         if(ammo < 0) throw new RuntimeException();
-        this.ammo += ammo;
+        this.countOfAmmo += ammo;
     }
 }

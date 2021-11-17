@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Album {
-    private String title;
-    private String author;
-    private List <MusicTrack> tracks;
+    String title;
+    String author;
+    List <MusicTrack> tracks;
     
 
     public Album(String title){

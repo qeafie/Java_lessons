@@ -1,8 +1,8 @@
 package ru.shonin.person;
 
 public class Employee {
-    private Name name;
-    private Department department;
+    Name name;
+    Department department;
     
     
     public Employee(Name name){
@@ -19,13 +19,13 @@ public class Employee {
     }
 
     public Department getDepartment() {
-        return new Department(department.getTitle(), department.getBoss());
+        return new Department(department.title, department.boss);
     }
     public void setDepartment(Department department){
-        if (this != department.getBoss())
+        if (this != department.boss)
             this.department = department;
         else {
-            this.department.setBoss(null);
+            this.department.boss = null;
             this.department = department;
         }
     }

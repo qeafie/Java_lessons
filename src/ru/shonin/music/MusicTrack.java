@@ -22,11 +22,11 @@ public class MusicTrack {
     public String toString(){
         String temp;
         if (author == null){
-            author = album.getAuthor();
+            author = album.author;
             temp = "Автор: " + author;
         }
         else {
-            temp = "Авторы: " + author + " " + album.getAuthor();
+            temp = "Авторы: " + author + " " + album.author;
         }
         return "Название: " + title + " / " + temp;
     }

@@ -2,17 +2,18 @@ package ru.shonin.city;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class City {
     private String name;
     private List <Path> paths;
 
-    City (String name){
+    public City (String name){
         this.name = name;
         paths = new ArrayList<Path>();
     }
 
-    City (String name, Path ...path){
+    public City (String name, Path ...path){
         this.name = name;
         paths = new ArrayList<Path>();
         paths.addAll(List.of(path));
@@ -42,5 +43,27 @@ public class City {
             }
         }
         return tempStr;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        //if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || !(o instanceof City city)) return false;
+        if (name != city.name)
+        if (paths.size() !=  city.paths.size()) return false;
+        int flag = paths.size();
+        for (int i = 0; i < paths.size(); i--){
+            Path tempPath = paths.get(i);
+            for (int j = 0; j < city.paths.size(); j++){
+                if(tempPath.equals(paths.get(j))) flag--;
+            }
+        }
+        if (flag == 0 ) return true;
+        else return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, paths);
     }
 }

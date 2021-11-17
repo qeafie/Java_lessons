@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Polyline implements CanReturnDistance, CanGetPolyLine {
-    List<Point> polyline;
+    public List<Point> polyline;
 
     public Polyline(){
         polyline =  new ArrayList<Point>();

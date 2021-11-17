@@ -2,7 +2,7 @@ package ru.shonin.service;
 
 import java.util.Objects;
 
-public final class Fraction extends Number {
+public final class Fraction extends Number implements Cloneable {
     
     private final int numerator;
     private final int denominator;
@@ -119,5 +119,9 @@ public final class Fraction extends Number {
     @Override
     public int hashCode() {
         return Objects.hash(numerator, denominator);
+    }
+
+    public Fraction clone(){
+        return new Fraction(numerator,denominator);
     }
 }

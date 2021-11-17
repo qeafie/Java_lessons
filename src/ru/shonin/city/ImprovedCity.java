@@ -1,7 +1,7 @@
 package ru.shonin.city;
 
 public class ImprovedCity extends City{
-    ImprovedCity(String name){
+    public ImprovedCity(String name){
         super(name);
     }
 
