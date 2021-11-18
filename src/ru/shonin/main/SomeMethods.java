@@ -6,6 +6,7 @@ import ru.shonin.generalizedСlasses.*;
 
 import ru.shonin.geometry.*;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,18 +69,16 @@ public class SomeMethods {
 
     //5.2.1 Сдвинуть линию
 
-//    static void moveLine (Line<? super ThreeDimensionalPoint> line){
-//       line.setStart(line.getStart().setX(
-//               line.getStart().getX() > 0 ?
-//               line.getStart().getX() + 10:line.getStart().getX() - 10));
-//    }
+    static void moveLine (Line<?> line){
+        line.getStart().setX(line.getStart().getX() > 0 ? line.getStart().getX() + 10 : line.getStart().getX() - 10);
+    }
 
     // 5.2.2 Поиск максимума
 
     static double getMaxValueStorage(Storage<? extends Number> []  storages){
-        double max = storages[1].getObj().doubleValue();
-        for (int i = 1; i < storages.length; i++){
-            double temp = storages[i].getObj().doubleValue();
+        double max = storages[0].getObj(null).doubleValue();
+        for (int i = 0; i < storages.length; i++){
+            double temp = storages[i].getObj(null).doubleValue();
             if (temp > max) max = temp;
         }
         return max;
@@ -129,6 +128,12 @@ public class SomeMethods {
 
     public static <T> T reduction(List<T> tList,Reducible<T> reducible){
         return (T) reducible.reduct(tList);
+    }
+
+    //5.3.4  Коллекционирование
+
+    public static <T,P> P collect(List<T> list, MethodOfCreate<T,P> methodOfCreate,MethodOfTransmitting<P> methodOfTransmitting ){
+        return null;
     }
 }
 

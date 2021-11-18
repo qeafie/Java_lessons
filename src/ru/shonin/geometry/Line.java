@@ -22,11 +22,11 @@ public class Line<T extends Point> implements Cloneable, CanReturnDistance{
     }
 
     public T getStart() {
-        return (T) start.clone();
+        return (T) start;
     }
 
     public T getEnd() {
-        return (T) end.clone();
+        return (T) end;
     }
 
 //    public Line(int x1, int y1, int x2, int y2){

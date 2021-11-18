@@ -3,6 +3,7 @@ import static ru.shonin.main.SomeMethods.*;
 
 import ru.shonin.generalizedСlasses.*;
 import ru.shonin.generalizedСlasses.apply.*;
+import ru.shonin.generalizedСlasses.methodsOfCreate.CreateIntegerPosAndNeg;
 import ru.shonin.generalizedСlasses.reduct.ReductInteger;
 import ru.shonin.generalizedСlasses.reduct.ReductIntegerArr;
 import ru.shonin.generalizedСlasses.reduct.ReductString;
@@ -92,7 +93,7 @@ public class Main {
 
         //5.1.2
         Storage<String> storage = new Storage<String>(null);
-        System.out.println(storage.getObj());
+        System.out.println(storage.getObj(null));
         System.out.println("----------");
 
         //5.1.4
@@ -212,7 +213,17 @@ public class Main {
         //13.11.2021
 
         Storage<Integer> integerStorage = new Storage<>(null);
-        System.out.println(integerStorage.getObj());
-        int testInt  = integerStorage.getObj();
+        System.out.println(integerStorage.getObj(null));
+        int testInt  = integerStorage.getObj(1);
+        System.out.println("----------");
+
+
+        //5.3.4 Коллекционирование
+
+        //тест Метода создания
+        ArrayList<Integer> testIntegers= (ArrayList<Integer>) integers;
+        System.out.println(new CreateIntegerPosAndNeg().creating(testIntegers));
+        System.out.println(new CreateIntegerPosAndNeg().creating(testIntegers).get(0));
+        System.out.println(new CreateIntegerPosAndNeg().creating(testIntegers).get(1));
     }
 }

@@ -8,8 +8,8 @@ public final class Storage<T> {
         this.obj = obj;
     }
 
-    public T getObj(T obj2) {
-        if (obj == null) return obj2;
+    public T getObj(Object obj2) {
+        if (obj == null) return (T) obj2;
         return obj;
     }
 
