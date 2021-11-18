@@ -221,9 +221,12 @@ public class Main {
         //5.3.4 Коллекционирование
 
         //тест Метода создания
-        ArrayList<Integer> testIntegers= (ArrayList<Integer>) integers;
+        ArrayList<Integer> testIntegers= new ArrayList<>();
+        testIntegers.add(1);
+        testIntegers.add(-3);
+        testIntegers.add(7);
+        System.out.println(testIntegers);
         System.out.println(new CreateIntegerPosAndNeg().creating(testIntegers));
-        System.out.println(new CreateIntegerPosAndNeg().creating(testIntegers).get(0));
-        System.out.println(new CreateIntegerPosAndNeg().creating(testIntegers).get(1));
+
     }
 }

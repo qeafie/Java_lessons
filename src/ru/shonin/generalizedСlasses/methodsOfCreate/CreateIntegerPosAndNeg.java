@@ -11,9 +11,12 @@ public class CreateIntegerPosAndNeg implements MethodOfCreate <ArrayList<Integer
 
     @Override
     public ArrayList<ArrayList<Integer>> creating(ArrayList<Integer> tobj) {
+        ArrayList<Integer> tobjcopy = (ArrayList<Integer>) tobj.clone();
         ArrayList<ArrayList<Integer>> tempArr = new ArrayList<>();
+        System.out.println("inside method :" + tobj);
         tempArr.add((ArrayList<Integer>) SomeMethods.filter(tobj,new TestInteger()));
-        tempArr.add((ArrayList<Integer>) SomeMethods.filter(tobj,new TestIntegerPos()));
+        System.out.println("inside method :" + tobj);
+        tempArr.add((ArrayList<Integer>) SomeMethods.filter(tobjcopy,new TestIntegerPos()));
         return tempArr;
     }
 }

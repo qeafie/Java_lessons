@@ -116,12 +116,13 @@ public class SomeMethods {
     // 5.3.2 Фильтр
 
     public static <T> List<T> filter(List<T> tList, Testable<T> testable){
-        for (int i = 0; i < tList.size(); i++){
-            if(testable.test(tList.get(i)))
-                tList.remove(tList.get(i));
+        List<T> tList1 = tList;
+        for (int i = 0; i < tList1.size(); i++){
+            if(testable.test(tList1.get(i)))
+                tList1.remove(tList1.get(i));
         }
 
-        return tList;
+        return tList1;
     }
 
     // 5.3.3 Сокращение
