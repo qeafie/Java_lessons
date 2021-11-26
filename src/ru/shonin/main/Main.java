@@ -15,9 +15,8 @@ import ru.shonin.animals.*;
 import ru.shonin.geometry.*;
 import ru.shonin.city.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import javax.script.ScriptEngineManager;
+import java.util.*;
 
 
 public class Main {
@@ -92,7 +91,7 @@ public class Main {
         System.out.println("----------");
 
         //5.1.2
-        Storage<String> storage = new Storage<String>(null);
+        Storage<String> storage =Storage.createStorage(null,true);
         System.out.println(storage.getObj(null));
         System.out.println("----------");
 
@@ -190,7 +189,9 @@ public class Main {
         //System.out.println(filter(arrIntegers,new TestIntegerArr()));
         List<Integer[]> test = filter(arrIntegers,new TestIntegerArr());
         for (int i = 0; i<test.size();i++){
-            System.out.println(Arrays.stream(test.get(i)).toList());
+           // System.out.println(Arrays.stream(test.get(i)).toList());
+            System.out.println(Arrays.asList(test.get(i)));
+            
         }
         System.out.println("----------");
 
@@ -212,21 +213,31 @@ public class Main {
         System.out.println("----------");
         //13.11.2021
 
-        Storage<Integer> integerStorage = new Storage<>(null);
+        Storage<Integer> integerStorage = Storage.createStorage(null,true);
         System.out.println(integerStorage.getObj(null));
         int testInt  = integerStorage.getObj(1);
         System.out.println("----------");
 
 
         //5.3.4 Коллекционирование
-
+        Deque<Integer> integerDeque  = collect(List.of(1,2,6,7),
+                (obj,res)-> res.push(obj),
+                ArrayDeque::new);
+        System.out.println(integerDeque);
         //тест Метода создания
-        ArrayList<Integer> testIntegers= new ArrayList<>();
-        testIntegers.add(1);
-        testIntegers.add(-3);
-        testIntegers.add(7);
-        System.out.println(testIntegers);
-        System.out.println(new CreateIntegerPosAndNeg().creating(testIntegers));
+//        ArrayList<Integer> testIntegers= new ArrayList<>();
+//        testIntegers.add(1);
+//        testIntegers.add(-3);
+//        testIntegers.add(7);
+//        System.out.println(testIntegers);
+//        System.out.println(new CreateIntegerPosAndNeg().creating(testIntegers));
+
+        //23.11.2021
+        Student student3 = new Student(new Name("Denis"),x-> (x > 0 )&&(x < 1000),1,2,3,999,20);
+        System.out.println(student3);
+
+       // Student student4 = new Student(new Name("Denis"),x-> x%2==0,1,2,3,999,20);
+
 
     }
 }

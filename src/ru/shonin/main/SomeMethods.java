@@ -9,6 +9,8 @@ import ru.shonin.geometry.*;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.Supplier;
 
 public class SomeMethods {
     // 4.1.4
@@ -105,7 +107,7 @@ public class SomeMethods {
 
     // 5.3.1 Функция
 
-    static <T,P> List<P> function(List<T> tList, Applyable<T,P> applyable){
+    static <T,P> List<P>  function(List<T> tList, Applyable<T,P> applyable){
         List<P> pList = new ArrayList<>();
         for (T listElem : tList ){
             pList.add((applyable.apply(listElem)));
@@ -133,8 +135,12 @@ public class SomeMethods {
 
     //5.3.4  Коллекционирование
 
-    public static <T,P> P collect(List<T> list, MethodOfCreate<T,P> methodOfCreate,MethodOfTransmitting<P> methodOfTransmitting ){
-        return null;
+    public static <T,P> P collect(List<T> list, BiConsumer<T,P> biConsumer, Supplier<P> supplier ){
+        P res = supplier.get();
+        for (T tobj: list){
+            biConsumer.accept(tobj,res);
+        }
+        return res;
     }
 }
 

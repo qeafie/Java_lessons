@@ -1,6 +1,7 @@
 package ru.shonin.geometry;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,14 +14,14 @@ public class Polyline implements CanReturnDistance, CanGetPolyLine {
 
     public Polyline(Point... polyline){
         this();
-        this.polyline.addAll(List.of(polyline));
+        this.polyline.addAll(Arrays.asList(polyline));
     }
 
     public void addPoint(Point point){
         polyline.add(point);
     }
     public void addPoint(Point... points){
-        polyline.addAll(List.of(points));
+        polyline.addAll(Arrays.asList(points));
     }
 
     public int getDistance(){

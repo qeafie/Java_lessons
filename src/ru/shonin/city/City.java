@@ -1,6 +1,7 @@
 package ru.shonin.city;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,7 +17,7 @@ public class City {
     public City (String name, Path ...path){
         this.name = name;
         paths = new ArrayList<Path>();
-        paths.addAll(List.of(path));
+        paths.addAll(Arrays.asList(path));
     }
 
     public void addPath(Path path){
