@@ -1,6 +1,6 @@
 package ru.shonin.person;
 
 @FunctionalInterface
-public interface GradesRule {
-    boolean check(int grade);
+public interface GradesRule<T extends Number> {
+    boolean check(T grade);
 }

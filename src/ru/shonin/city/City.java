@@ -50,7 +50,7 @@ public class City {
         if (this == o) return true;
         //if (o == null || getClass() != o.getClass()) return false;
         if (o == null || !(o instanceof City city)) return false;
-        if (name != city.name)
+        if (name != city.name);
         if (paths.size() !=  city.paths.size()) return false;
         int flag = paths.size();
         for (int i = 0; i < paths.size(); i--){

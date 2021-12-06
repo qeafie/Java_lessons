@@ -220,10 +220,10 @@ public class Main {
 
 
         //5.3.4 Коллекционирование
-        Deque<Integer> integerDeque  = collect(List.of(1,2,6,7),
-                (obj,res)-> res.push(obj),
-                ArrayDeque::new);
-        System.out.println(integerDeque);
+//        Deque<Integer> integerDeque  = collect(List.of(1,2,6,7),
+//                (obj,res)-> res.push(obj),
+//                ArrayDeque::new);
+//        System.out.println(integerDeque);
         //тест Метода создания
 //        ArrayList<Integer> testIntegers= new ArrayList<>();
 //        testIntegers.add(1);
@@ -233,11 +233,15 @@ public class Main {
 //        System.out.println(new CreateIntegerPosAndNeg().creating(testIntegers));
 
         //23.11.2021
-        Student student3 = new Student(new Name("Denis"),x-> (x > 0 )&&(x < 1000),1,2,3,999,20);
+        Student<Integer> student3 = new Student(new Name("Denis"),x-> (x.intValue() > 0 )&&(x.intValue() < 1000),1,2,3,999,20);
         System.out.println(student3);
 
        // Student student4 = new Student(new Name("Denis"),x-> x%2==0,1,2,3,999,20);
 
+       //03.12.2021
+       
+       
+        
 
     }
 }

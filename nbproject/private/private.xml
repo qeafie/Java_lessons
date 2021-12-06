@@ -3,22 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/reduct/ReductString.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/Applyable.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/test/TestIntegerPos.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/Testable.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/test/TestInteger.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/apply/ApplyInteger.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/test/TestString.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/reduct/ReductIntegerArr.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/reduct/ReductInteger.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/methodsOfCreate/CreateIntegerPosAndNeg.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/main/SomeMethods.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/Reducible.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/test/TestIntegerArr.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/apply/ApplyString.java</file>
+            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/person/Save.java</file>
+            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/person/Action.java</file>
             <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/main/Main.java</file>
-            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/generalizedСlasses/apply/ApplyIntegerArr.java</file>
+            <file>file:/D:/2%20курс/Java/Задачи/Первый%20блок/1/src/ru/shonin/person/Student.java</file>
         </group>
     </open-files>
 </project-private>
