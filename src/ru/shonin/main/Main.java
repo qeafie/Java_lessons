@@ -3,19 +3,18 @@ import static ru.shonin.main.SomeMethods.*;
 
 import ru.shonin.generalizedСlasses.*;
 import ru.shonin.generalizedСlasses.apply.*;
-import ru.shonin.generalizedСlasses.methodsOfCreate.CreateIntegerPosAndNeg;
 import ru.shonin.generalizedСlasses.reduct.ReductInteger;
 import ru.shonin.generalizedСlasses.reduct.ReductIntegerArr;
 import ru.shonin.generalizedСlasses.reduct.ReductString;
 import ru.shonin.generalizedСlasses.test.*;
 import ru.shonin.person.Name;
+import ru.shonin.person.Save;
 import ru.shonin.person.Student;
 import ru.shonin.service.Fraction;
 import ru.shonin.animals.*;
 import ru.shonin.geometry.*;
 import ru.shonin.city.*;
 
-import javax.script.ScriptEngineManager;
 import java.util.*;
 
 
@@ -239,9 +238,33 @@ public class Main {
        // Student student4 = new Student(new Name("Denis"),x-> x%2==0,1,2,3,999,20);
 
        //03.12.2021
-       
-       
-        
 
+        System.out.println(student3);
+        student3.setName(new Name("qwerty"));
+        System.out.println(student3);
+        student3.undo();
+        System.out.println(student3);
+
+        System.out.println("-----------");
+        System.out.println(student3+ "");
+        Student.Save save = student3.getSave();
+        student3.add(5);
+        student3.add(12);
+        System.out.println(student3);
+        student3.load(save);
+        System.out.println(student3);
+        
+        
+        //оптимизация Студента
+        // создать опекуна и если они узнают то ругаются за плохие оценки
+        //1 родитель может отслеживать несколько студентов
+        //событие происходит  - и родителя сообщают что у этого студента вот такая оценка
+        //Родитель сам решает является ли оценка плохой
+        //оценка - тип события 
+        //доделать - интерфейс вместо guardian
+        // сделать метод subsscribe
+        // родитель должен выбрать на какое событие подписаться
+        
+        
     }
 }

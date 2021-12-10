@@ -2,12 +2,7 @@ package ru.shonin.person;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Deque;
 import java.util.List;
-import java.util.Set;
-import java.util.function.Function;
-import java.util.function.Predicate;
 
 // сохранение через innerclass
 
@@ -16,9 +11,11 @@ public class Student<T extends Number> implements ru.shonin.generalizedСlasses.
     private Name name;
     private List<T> grades = new ArrayList<>();
     private GradesRule rule = x->true;
-    private static List<GradesRule> gradesRules = new ArrayList();
-    private ArrayDeque<Action> undoDeq = new ArrayDeque();
-    private Save save;
+    private static final List<GradesRule> gradesRules = new ArrayList();
+    private final ArrayDeque<Action> undoDeq = new ArrayDeque();
+    private List<Guardian> guardians = new ArrayList<>();
+    
+
             
             
     public Student(Name name){
@@ -52,13 +49,19 @@ public class Student<T extends Number> implements ru.shonin.generalizedСlasses.
     
     public boolean add (T num){
        undoDeq.add(()->grades.remove(num));
+       
+       for(Guardian guardian: guardians)
+            guardian.update(this,num);
+       
        return grades.add(num);
     }
     
     public T remove(){
-        //undoDeq.add(()->grades.add(num));
-        return grades.remove(grades.size()-1); 
+        T temp = grades.get(grades.size()-1);
+        undoDeq.add(()->grades.add(temp));
+        return grades.remove(grades.size()-1);
     }
+
     public void setName(Name name){
         Name temp = this.name;
         undoDeq.push(()-> this.name = temp);
@@ -68,9 +71,7 @@ public class Student<T extends Number> implements ru.shonin.generalizedСlasses.
         undoDeq.pop().act();
     }
     
-    public Save getSave(){
-        return save;
-    }
+
     
     public float getAverageRating(){
         if(grades.size() == 0 ){
@@ -99,6 +100,8 @@ public class Student<T extends Number> implements ru.shonin.generalizedСlasses.
             }
             this.grades.add(grade);
         }
+        
+        
     }
 
     //23.11.2021
@@ -117,6 +120,7 @@ public class Student<T extends Number> implements ru.shonin.generalizedСlasses.
             gradesRules.add(rule);
         }
         return false;
+        
     }
 
     private boolean checkRule(GradesRule rule){
@@ -160,5 +164,20 @@ public class Student<T extends Number> implements ru.shonin.generalizedСlasses.
         if (this.getAverageRating() == obj.getAverageRating()) return 0;
         else return -1;
     }
+
+    public Save<Student> getSave(){
+        return new SaveStudent();
+    }
+
+    private class SaveStudent implements Save<Student>{
+        private final Name name = Student.this.name;
+        private final List<T> grades = Student.this.getGrades();
+        
+        public void restore(){
+            Student.this.name = this.name;
+            Student.this.grades = new ArrayList<>(grades);
+        }
+    }
     
 }
+
