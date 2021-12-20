@@ -10,12 +10,14 @@ import ru.shonin.generalizedСlasses.test.*;
 import ru.shonin.person.Name;
 import ru.shonin.person.Save;
 import ru.shonin.person.Student;
+import ru.shonin.service.Connection;
 import ru.shonin.service.Fraction;
 import ru.shonin.animals.*;
 import ru.shonin.geometry.*;
 import ru.shonin.city.*;
 
 import java.util.*;
+import ru.shonin.service.TrafficLight;
 
 
 public class Main {
@@ -246,14 +248,14 @@ public class Main {
         System.out.println(student3);
 
         System.out.println("-----------");
-        System.out.println(student3+ "");
-        Student.Save save = student3.getSave();
-        student3.add(5);
-        student3.add(12);
-        System.out.println(student3);
-        student3.load(save);
-        System.out.println(student3);
-        
+//        System.out.println(student3+ "");
+//        Student.Save save = student3.getSave();
+//        student3.add(5);
+//        student3.add(12);
+//        System.out.println(student3);
+//        student3.load(save);
+//        System.out.println(student3);
+//
         
         //оптимизация Студента
         // создать опекуна и если они узнают то ругаются за плохие оценки
@@ -265,6 +267,22 @@ public class Main {
         // сделать метод subsscribe
         // родитель должен выбрать на какое событие подписаться
         
+        
+        
+        
+        
+        //11.12.2021
+        
+//        TrafficLight tl = new TrafficLight();
+//        System.out.println(tl.next());
+//        System.out.println(tl.next());
+//        System.out.println(tl.next());
+//        
+        //
+
+        Connection con = Connection.of("my.db").get();
+
+        System.out.println(con.next());
         
     }
 }

@@ -1,23 +1,26 @@
 package ru.shonin.person;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 // сохранение через innerclass
 
 
-public class Student<T extends Number> implements ru.shonin.generalizedСlasses.Comparable<Student> , Comparable<Student> {
+public class Student<T extends Number> implements ru.shonin.generalizedСlasses.Comparable<Student> , Comparable<Student>, Subject {
     private Name name;
     private List<T> grades = new ArrayList<>();
     private GradesRule rule = x->true;
     private static final List<GradesRule> gradesRules = new ArrayList();
     private final ArrayDeque<Action> undoDeq = new ArrayDeque();
-    private List<Guardian> guardians = new ArrayList<>();
-    
+    private Map<String, List<Observer>> observers = new HashMap<>();
 
+    {
+        observers.put("add",new ArrayList<>());
+        observers.put("remove",new ArrayList<>());
+        observers.put("setName",new ArrayList<>());
+    }
             
-            
+
+
     public Student(Name name){
         this.name = name;      
     }
@@ -46,12 +49,13 @@ public class Student<T extends Number> implements ru.shonin.generalizedСlasses.
             this.grades.add(grade);
         }
     }
-    
+
+
+
     public boolean add (T num){
        undoDeq.add(()->grades.remove(num));
        
-       for(Guardian guardian: guardians)
-            guardian.update(this,num);
+       notifyObservers("add");
        
        return grades.add(num);
     }
@@ -59,6 +63,7 @@ public class Student<T extends Number> implements ru.shonin.generalizedСlasses.
     public T remove(){
         T temp = grades.get(grades.size()-1);
         undoDeq.add(()->grades.add(temp));
+        notifyObservers("remove");
         return grades.remove(grades.size()-1);
     }
 
@@ -66,6 +71,7 @@ public class Student<T extends Number> implements ru.shonin.generalizedСlasses.
         Name temp = this.name;
         undoDeq.push(()-> this.name = temp);
         this.name = name;
+        notifyObservers("setName");
     }
     public void undo(){
         undoDeq.pop().act();
@@ -167,6 +173,32 @@ public class Student<T extends Number> implements ru.shonin.generalizedСlasses.
 
     public Save<Student> getSave(){
         return new SaveStudent();
+    }
+
+
+//    public void addEvent(String ...operations){
+//        for (String operation : operations) {
+//            this.observers.put(operation, new ArrayList<>());
+//        }
+//    }
+
+    @Override
+    public void registerObserver(String event, Observer observer) {
+       List<Observer> observersEvent = observers.get(event);
+       observersEvent.add(observer);
+    }
+
+    @Override
+    public void unregisterObserver(String event, Observer observer) {
+        List<Observer> observersEvent = observers.get(event);
+        observersEvent.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers(String event) {
+        List<Observer> observersEvent = observers.get(event);
+        for (Observer observer: observersEvent)
+            observer.update(event,this);
     }
 
     private class SaveStudent implements Save<Student>{
